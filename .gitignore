@@ -1,3 +1,6 @@
+# Project related files
+api_keys.properties
+
 # Built application files
 *.apk
 *.aar
