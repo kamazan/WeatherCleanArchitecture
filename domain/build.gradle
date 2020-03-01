@@ -1,0 +1,10 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinConfig.version"
+
+    implementation "org.koin:koin-core:${rootProject.ext.dependencies.koinVersion}"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.ext.dependencies.coroutinesVersion}"
+}

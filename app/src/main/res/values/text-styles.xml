@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="H1Primary" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_light</item>
+        <item name="android:textSize">@dimen/large_text</item>
+        <item name="android:textColor">@color/onPrimary</item>
+    </style>
+
+    <style name="H1Secondary" parent="H1Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="H2Primary" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_medium</item>
+        <item name="android:textSize">@dimen/big_text</item>
+        <item name="android:textColor">@color/onPrimary</item>
+    </style>
+
+    <style name="H2Secondary" parent="H2Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="H3Primary" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textSize">@dimen/medium_text</item>
+        <item name="android:textColor">@color/onPrimary</item>
+    </style>
+
+    <style name="H3Secondary" parent="H3Primary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="BodyPrimary" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textColor">@color/onPrimary</item>
+        <item name="android:textSize">@dimen/body_text</item>
+    </style>
+
+    <style name="BodySecondary" parent="BodyPrimary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="CaptionPrimary" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_light</item>
+        <item name="android:textColor">@color/onPrimary</item>
+        <item name="android:textSize">@dimen/body_text</item>
+        <item name="android:alpha">.7</item>
+    </style>
+
+    <style name="CaptionSecondary" parent="CaptionPrimary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="InfoPrimary" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/rubik_light</item>
+        <item name="android:textColor">@color/onPrimary</item>
+        <item name="android:textSize">@dimen/small_text</item>
+        <item name="android:alpha">.7</item>
+    </style>
+
+    <style name="InfoSecondary" parent="InfoPrimary">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+</resources>

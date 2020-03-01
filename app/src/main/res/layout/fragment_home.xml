@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kris.weather.features.home.HomeViewModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/layoutHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    layout="@layout/layout_weather_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    app:location="@{viewModel.location}"
+                    app:weather="@{viewModel.nearestWeather}" />
+            </FrameLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutSubHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_home_subheader"
+                android:elevation="2dp"
+                android:padding="@dimen/keyline_1"
+                app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+
+                <include
+                    android:id="@+id/layoutWeatherHumidity"
+                    layout="@layout/layout_weather_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:data="@{viewModel.nearestWeather}"
+                    app:icon="@{@drawable/ic_humidity}"
+                    app:layout_constraintEnd_toStartOf="@+id/layoutWeatherPressure"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:text="@{@string/weather_humidity(viewModel.nearestWeather.humidity)}" />
+
+                <include
+                    android:id="@+id/layoutWeatherPressure"
+                    layout="@layout/layout_weather_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:data="@{viewModel.nearestWeather}"
+                    app:icon="@{@drawable/ic_pressure}"
+                    app:layout_constraintEnd_toStartOf="@+id/layoutWeatherWindSpeed"
+                    app:layout_constraintStart_toEndOf="@+id/layoutWeatherHumidity"
+                    app:text="@{@string/weather_pressure(viewModel.nearestWeather.pressure)}" />
+
+
+                <include
+                    android:id="@+id/layoutWeatherWindSpeed"
+                    layout="@layout/layout_weather_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:data="@{viewModel.nearestWeather}"
+                    app:icon="@{@drawable/ic_wind}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/layoutWeatherPressure"
+                    app:text="@{@string/weather_wind_speed(viewModel.nearestWeather.windSpeed)}" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewWeather"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/keyline_1"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutSubHeader"
+                tools:listitem="@layout/layout_row_weather" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

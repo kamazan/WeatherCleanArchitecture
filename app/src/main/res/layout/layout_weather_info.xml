@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="icon"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="text"
+            type="java.lang.String" />
+
+        <variable
+            name="data"
+            type="com.kris.weather.domain.entity.Weather" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:alpha=".7"
+            android:src="@{icon}"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@id/textViewInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_humidity"
+            />
+
+        <TextView
+            android:id="@+id/textViewInfo"
+            style="@style/CaptionSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:text="@{text}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageViewIcon"
+            app:data="@{data}"
+            tools:text="42%" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

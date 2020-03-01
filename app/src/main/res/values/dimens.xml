@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="standard_horizontal_padding">20dp</dimen>
+    <dimen name="standard_vertical_padding">30dp</dimen>
+    <dimen name="keyline_1">10dp</dimen>
+    <dimen name="keyline_2">20dp</dimen>
+    <dimen name="keyline_3">30dp</dimen>
+    <dimen name="keyline_4">40dp</dimen>
+    <dimen name="keyline_5">50dp</dimen>
+    <dimen name="keyline_6">60dp</dimen>
+    <dimen name="keyline_7">70dp</dimen>
+    <dimen name="keyline_8">80dp</dimen>
+    <dimen name="keyline_9">90dp</dimen>
+    <dimen name="large_text">64sp</dimen>
+    <dimen name="big_text">40sp</dimen>
+    <dimen name="medium_text">32sp</dimen>
+    <dimen name="body_text">16sp</dimen>
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="header_icon_size">50dp</dimen>
+    <dimen name="home_list_icon_size">32dp</dimen>
+    <dimen name="cardViewFieldRadius">5dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="header_radius">30dp</dimen>
+
+</resources>

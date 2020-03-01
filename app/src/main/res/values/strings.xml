@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">WeatherCleanArchitecture</string>
+    <string name="empty_placeholder">-</string>
+    <string name="home_format_date_hour">h:mm a</string>
+    <string name="home_format_date_day">EEE, MMM d</string>
+    <string name="home_list_format_hour">h a</string>
+    <string name="home_list_format_day">EEEE</string>
+    <string name="weather_temperature_celcius">%d°C</string>
+    <string name="weather_humidity">%d%%</string>
+    <string name="weather_humidity_description">Humidity</string>
+    <string name="weather_rain_volume">%s mm</string>
+    <string name="weather_rain_volume_description">Rain volume</string>
+    <string name="weather_snow_volume">%s mm</string>
+    <string name="weather_snow_volume_description">Snow volume</string>
+    <string name="weather_wind_speed">%s km/h</string>
+    <string name="weather_wind_speed_description">Wind speed</string>
+    <string name="weather_pressure">%d hPa</string>
+    <string name="weather_pressure_description">Pressure</string>
+    <string name="weather_perceived_temperature">@string/weather_temperature_celcius</string>
+    <string name="weather_perceived_temperature_description">Feels like</string>
+    <string name="weather_cloudiness">%d%%</string>
+    <string name="weather_cloudiness_description">Cloudiness</string>
+
+    <string name="home_header_location">%s (%s)</string>
+</resources>

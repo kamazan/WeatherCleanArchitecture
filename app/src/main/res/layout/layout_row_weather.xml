@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.kris.weather.domain.entity.Weather" />
+
+        <variable
+            name="listener"
+            type="com.kris.weather.utils.DataBindingAdapter.OnItemClickListener" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="@dimen/keyline_2"
+        android:paddingTop="@dimen/keyline_1"
+        android:paddingEnd="@dimen/keyline_2"
+        android:paddingBottom="@dimen/keyline_1"
+        android:onClick="@{() -> listener.onItemClick(item)}"
+        >
+
+        <ImageView
+            android:id="@+id/imageViewWeatherIcon"
+            android:layout_width="@dimen/home_list_icon_size"
+            android:layout_height="@dimen/home_list_icon_size"
+            android:layout_gravity="center"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:weatherIcon="@{item.icon}"
+            tools:src="@drawable/ic_weather_clear_night"
+            android:alpha=".7"
+            />
+
+
+        <TextView
+            android:id="@+id/textViewDay"
+            style="@style/BodySecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_2"
+            app:date="@{item.date}"
+            app:format="@{@string/home_list_format_day}"
+            app:layout_constraintStart_toEndOf="@id/imageViewWeatherIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="10AM" />
+
+        <TextView
+            android:id="@+id/textViewTime"
+            style="@style/InfoSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/keyline_2"
+            app:date="@{item.date}"
+            app:format="@{@string/home_list_format_hour}"
+            app:layout_constraintStart_toStartOf="@id/textViewDay"
+            app:layout_constraintTop_toBottomOf="@id/textViewDay"
+            tools:text="10AM" />
+
+        <TextView
+            android:id="@+id/textViewTemperature"
+            style="@style/CaptionSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/weather_temperature_celcius(item.temperature)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="42°C" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

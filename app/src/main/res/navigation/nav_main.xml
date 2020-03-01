@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.kris.weather.features.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment">
+
+            <argument
+                app:argType="com.kris.weather.domain.entity.Weather"
+                android:name="weather"
+                />
+
+            <argument
+                app:argType="com.kris.weather.domain.entity.Location"
+                android:name="location"
+                app:nullable="true"
+                />
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.kris.weather.features.details.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details"
+        >
+
+        <argument
+            app:argType="com.kris.weather.domain.entity.Weather"
+            android:name="weather"
+            />
+
+        <argument
+            app:argType="com.kris.weather.domain.entity.Location"
+            android:name="location"
+            app:nullable="true"
+            />
+
+    </fragment>
+
+
+</navigation>
